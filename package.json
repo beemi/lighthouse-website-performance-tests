@@ -1,0 +1,18 @@
+{
+  "name": "lighthouse-website-performance",
+  "version": "1.0.0",
+  "description": "Trinny London website performance tests using lighthouse",
+  "main": "index.js",
+  "scripts": {
+    "test": "lighthouse https://tlqa:1000parrots@trinnylondon-dev.com --screenEmulation.disabled --throttling-method=provided --no-emulatedUserAgent --output html --output-path ./report.html --view",
+    "desktop:headless": "lighthouse https://tlqa:1000parrots@trinnylondon-dev.com --view --config-path=node_modules/lighthouse/lighthouse-core/config/lr-desktop-config.js --chrome-flags='--headless' --output-path=./results/desktop.html",
+    "desktop": "lighthouse https://tlqa:1000parrots@trinnylondon-dev.com --view --config-path=node_modules/lighthouse/lighthouse-core/config/lr-desktop-config.js --output-path=./results/desktop.html",
+    "desktoptest": "lighthouse ${URL} --view --config-path=node_modules/lighthouse/lighthouse-core/config/lr-desktop-config.js --output-path=./results/desktop.html"
+  },
+  "author": "MaryaManju Induri",
+  "license": "ISC",
+  "devDependencies": {
+    "lighthouse": "^6.5.0",
+    "lighthouse-plugin-field-performance": "^2.2.1"
+  }
+}
